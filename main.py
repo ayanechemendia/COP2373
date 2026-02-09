@@ -25,7 +25,8 @@ def get_ticket_request(remaining_tickets):
     """
     tickets = int(input(
         f"\nThere are {remaining_tickets} tickets remaining.\n"
-        f"How many tickets would you like to buy (1–{MAX_PER_BUYER})? "
+        f"Enter the number of tickets you wish to purchase (up to {MAX_PER_BUYER}): "
+        
     ))
     return tickets
 
@@ -56,5 +57,6 @@ def sell_tickets():
 
 # Program entry point
 sell_tickets()
+
 
 

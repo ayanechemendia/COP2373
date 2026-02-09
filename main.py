@@ -9,7 +9,7 @@ The program continues until all tickets are sold,
 then displays the total number of buyers.
 """
 
-MAX_TICKETS = 20
+MAX_TICKETS = 10
 MAX_PER_BUYER = 4
 
 
@@ -56,4 +56,5 @@ def sell_tickets():
 
 # Program entry point
 sell_tickets()
+
 

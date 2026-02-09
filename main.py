@@ -37,7 +37,7 @@ def sell_tickets():
     and counts the number of buyers.
     """
     remaining_tickets = MAX_TICKETS
-    total_buyers = 0  # accumulator
+    buyer_count = 0  # accumulator
 
     while remaining_tickets > 0:
         requested = get_ticket_request(remaining_tickets)
@@ -48,15 +48,16 @@ def sell_tickets():
             print("Error: Not enough tickets remaining.")
         else:
             remaining_tickets -= requested
-            total_buyers += 1
+            buyer_count += 1
             print(f"Purchase successful! Tickets remaining: {remaining_tickets}")
 
     print("\nAll tickets have been sold!")
-    print(f"Total number of buyers: {total_buyers}")
+    print(f"Total number of buyers: {buyer_count}")
 
 
 # Program entry point
 sell_tickets()
+
 
 
 

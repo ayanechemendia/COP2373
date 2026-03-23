@@ -1,0 +1,60 @@
+# ============================================
+# Paragraph Sentence Analyzer
+# COP2373 Assignment
+# Programming Exercise 7
+# ============================================
+
+import re
+
+
+# ----------------------------------------
+# FUNCTION: get_paragraph
+# Description: Prompts the user to enter a paragraph
+# ----------------------------------------
+def get_paragraph():
+    paragraph = input("Enter a paragraph:\n")
+    return paragraph
+
+
+# ----------------------------------------
+# FUNCTION: split_sentences
+# Description: Splits a paragraph into individual sentences
+# ----------------------------------------
+def split_sentences(paragraph):
+    # Split sentences using punctuation (. ! ?)
+    sentences = re.split(r'[.!?]+', paragraph)
+
+    # Remove empty strings and extra spaces
+    sentences = [s.strip() for s in sentences if s.strip() != ""]
+
+    return sentences
+
+
+# ----------------------------------------
+# FUNCTION: display_sentences
+# Description: Displays each sentence and total count
+# ----------------------------------------
+def display_sentences(sentences):
+    print("\nIndividual Sentences:")
+
+    for i, sentence in enumerate(sentences, 1):
+        print(f"{i}. {sentence}")
+
+    print(f"\nTotal number of sentences: {len(sentences)}")
+
+
+# ----------------------------------------
+# FUNCTION: main
+# Description: Controls program flow
+# ----------------------------------------
+def main():
+    paragraph = get_paragraph()
+    sentences = split_sentences(paragraph)
+    display_sentences(sentences)
+
+
+# ----------------------------------------
+# PROGRAM ENTRY POINT
+# ----------------------------------------
+if __name__ == "__main__":
+    main()
